@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace HuffmanV2
 {
@@ -25,7 +26,7 @@ namespace HuffmanV2
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnBrowseFile_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
 
@@ -42,13 +43,22 @@ namespace HuffmanV2
                 //Open document
                 string filename = dlg.FileName;
                 txtFilePathName.Text = filename;
-
+                
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void btnLoadFile_Click(object sender, RoutedEventArgs e)
         {
+            StreamReader sr = new StreamReader(txtFilePathName.Text, Encoding.ASCII);
+            string dataFull = sr.ReadToEnd();
+            sr.Close();
+            txtFilePreview.Text = dataFull;
+
+
+
 
         }
+
     }
 }
+
