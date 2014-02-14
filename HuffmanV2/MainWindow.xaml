@@ -9,7 +9,16 @@
         <Button x:Name="btnLoadFile" Content="Load" HorizontalAlignment="Left" Height="43" Margin="510,11,0,0" VerticalAlignment="Top" Width="82" Click="btnLoadFile_Click"/>
         <TextBox x:Name="txtFilePathName" HorizontalAlignment="Left" Height="44" Margin="8,10,0,0" TextWrapping="Wrap" Text="Enter path and file name or click Browse" VerticalAlignment="Top" Width="407" Background="WhiteSmoke"/>
         <Button x:Name="btnBrowseFile" Content="Browse" HorizontalAlignment="Left" Height="44" Margin="420,10,0,0" VerticalAlignment="Top" Width="85" Click="btnBrowseFile_Click"/>
-        <TextBox x:Name="txtFilePreview" HorizontalAlignment="Left" Height="265" Margin="288,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304"/>
+        <TextBox x:Name="txtFilePreview" HorizontalAlignment="Left" Height="265" Margin="288,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
 
     </Grid>
 </Window>

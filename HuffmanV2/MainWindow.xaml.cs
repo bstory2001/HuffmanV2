@@ -49,13 +49,19 @@ namespace HuffmanV2
 
         private void btnLoadFile_Click(object sender, RoutedEventArgs e)
         {
+            //load file as string using ASCII encoding into dataFull
             StreamReader sr = new StreamReader(txtFilePathName.Text, Encoding.ASCII);
             string dataFull = sr.ReadToEnd();
-            sr.Close();
+            //release file
+            sr.Close(); 
+            //show file contents in text box
+            //txtFilePreview.Text = dataFull;
+
+            int start = dataFull.IndexOf("{");
+            int end = dataFull.IndexOf("}");
+            dataFull = dataFull.Substring(start +1, end - start - 1);
+            //show in text AFTER clearing out the garbage
             txtFilePreview.Text = dataFull;
-
-
-
 
         }
 
