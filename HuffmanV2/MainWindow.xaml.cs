@@ -59,12 +59,34 @@ namespace HuffmanV2
 
             int start = dataFull.IndexOf("{");
             int end = dataFull.IndexOf("}");
-            dataFull = dataFull.Substring(start +1, end - start - 1);
+            dataFull = dataFull.Substring(start +1, end - start - 2).Trim();
+            
             //show in text AFTER clearing out the garbage
             txtFilePreview.Text = dataFull;
+            
+            //split by ',' to an int array and clean up whitespace and /n/r
+            int[] dataSplit = dataFull.Split(new char[] {','}, StringSplitOptions.RemoveEmptyEntries).Select(a => Convert.ToInt32(a)).ToArray();
+
+            List<int> dataListSorted = dataSplit.OfType<int>().ToList();
+            dataListSorted.Sort();
+                        
+            //add to listbox
+            foreach (int data in dataListSorted)
+            {
+                lstData.Items.Add(data);
+            }
+
+            
+
 
         }
 
     }
 }
 
+public class Values
+{
+    public int Position;
+    public int Value;
+    public int Count;
+}

@@ -19,6 +19,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
+        <ListBox x:Name="lstData" HorizontalAlignment="Left" Height="265" Margin="8,59,0,0" VerticalAlignment="Top" Width="275"/>
 
     </Grid>
 </Window>
