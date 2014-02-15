@@ -19,7 +19,10 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <ListBox x:Name="lstData" HorizontalAlignment="Left" Height="265" Margin="8,59,0,0" VerticalAlignment="Top" Width="275"/>
+        <ListBox x:Name="lstData" HorizontalAlignment="Left" Height="225" Margin="10,99,0,0" VerticalAlignment="Top" Width="135"/>
+        <ListBox x:Name="lstDistinct" HorizontalAlignment="Left" Height="225" Margin="150,99,0,0" VerticalAlignment="Top" Width="133"/>
+        <TextBox x:Name="txtDistinctCount" HorizontalAlignment="Left" Height="35" Margin="150,59,0,0" TextWrapping="Wrap" Text="Displays count of distinct symbols" VerticalAlignment="Top" Width="133"/>
+        <TextBox x:Name="txtDataCount" HorizontalAlignment="Left" Height="35" Margin="10,59,0,0" TextWrapping="Wrap" Text="Displays count of total symbols" VerticalAlignment="Top" Width="135"/>
 
     </Grid>
 </Window>

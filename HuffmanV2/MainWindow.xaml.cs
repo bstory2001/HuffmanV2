@@ -65,17 +65,40 @@ namespace HuffmanV2
             txtFilePreview.Text = dataFull;
             
             //split by ',' to an int array and clean up whitespace and /n/r
-            int[] dataSplit = dataFull.Split(new char[] {','}, StringSplitOptions.RemoveEmptyEntries).Select(a => Convert.ToInt32(a)).ToArray();
+            int[] dataSplit = dataFull
+                .Split(new char[] {','}, StringSplitOptions.RemoveEmptyEntries)
+                .Select(a => Convert.ToInt32(a))
+                .ToArray();
 
+            //create a sorted list of all data
             List<int> dataListSorted = dataSplit.OfType<int>().ToList();
             dataListSorted.Sort();
-                        
+            
+            //display total symbol count in text box
+            txtDataCount.Text = dataListSorted.Count().ToString();
+
+            //create a list of distinct symbols/values
+            var dataListDistince = dataListSorted.Distinct();
+                                    
             //add to listbox
             foreach (int data in dataListSorted)
             {
                 lstData.Items.Add(data);
             }
-
+            //determine amount of distinct symbols
+            var dataUniqueCount = dataListDistince.Count();
+            
+            //display unique count in text box
+            txtDistinctCount.Text = dataUniqueCount.ToString();
+            
+            foreach (var data in dataListDistince)
+            {
+                lstDistinct.Items.Add(data);
+                foreach (int x in dataListSorted)
+                { 
+                    
+                }
+            }
             
 
 
