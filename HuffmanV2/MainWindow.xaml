@@ -9,7 +9,7 @@
         <Button x:Name="btnLoadFile" Content="Load" HorizontalAlignment="Left" Height="43" Margin="510,11,0,0" VerticalAlignment="Top" Width="82" Click="btnLoadFile_Click"/>
         <TextBox x:Name="txtFilePathName" HorizontalAlignment="Left" Height="44" Margin="8,10,0,0" TextWrapping="Wrap" Text="Enter path and file name or click Browse" VerticalAlignment="Top" Width="407" Background="WhiteSmoke"/>
         <Button x:Name="btnBrowseFile" Content="Browse" HorizontalAlignment="Left" Height="44" Margin="420,10,0,0" VerticalAlignment="Top" Width="85" Click="btnBrowseFile_Click"/>
-        <TextBox x:Name="txtFilePreview" HorizontalAlignment="Left" Height="265" Margin="288,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" RenderTransformOrigin="0.5,0.5">
+        <TextBox x:Name="txtFilePreview" HorizontalAlignment="Left" Height="242" Margin="288,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" RenderTransformOrigin="0.5,0.5">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -19,8 +19,8 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <ListBox x:Name="lstData" HorizontalAlignment="Left" Height="225" Margin="10,99,0,0" VerticalAlignment="Top" Width="135"/>
-        <ListBox x:Name="lstDistinct" HorizontalAlignment="Left" Height="225" Margin="150,99,0,0" VerticalAlignment="Top" Width="133"/>
+        <ListBox x:Name="lstData" HorizontalAlignment="Left" Height="202" Margin="10,99,0,0" VerticalAlignment="Top" Width="135"/>
+        <ListBox x:Name="lstDistinct" HorizontalAlignment="Left" Height="202" Margin="150,99,0,0" VerticalAlignment="Top" Width="133"/>
         <TextBox x:Name="txtDistinctCount" HorizontalAlignment="Left" Height="35" Margin="150,59,0,0" TextWrapping="Wrap" Text="Displays count of distinct symbols" VerticalAlignment="Top" Width="133"/>
         <TextBox x:Name="txtDataCount" HorizontalAlignment="Left" Height="35" Margin="10,59,0,0" TextWrapping="Wrap" Text="Displays count of total symbols" VerticalAlignment="Top" Width="135"/>
 

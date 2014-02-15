@@ -78,7 +78,7 @@ namespace HuffmanV2
             txtDataCount.Text = dataListSorted.Count().ToString();
 
             //create a list of distinct symbols/values
-            var dataListDistince = dataListSorted.Distinct();
+            var dataListDistinct = dataListSorted.Distinct();
                                     
             //add to listbox
             foreach (int data in dataListSorted)
@@ -86,21 +86,31 @@ namespace HuffmanV2
                 lstData.Items.Add(data);
             }
             //determine amount of distinct symbols
-            var dataUniqueCount = dataListDistince.Count();
+            var dataUniqueCount = dataListDistinct.Count();
             
             //display unique count in text box
             txtDistinctCount.Text = dataUniqueCount.ToString();
             
-            foreach (var data in dataListDistince)
+            
+            //display unique data in listbox
+            foreach (var data in dataListDistinct)
             {
                 lstDistinct.Items.Add(data);
-                foreach (int x in dataListSorted)
-                { 
-                    
-                }
             }
-            
 
+            var res = dataListSorted.GroupBy(a => a)
+                .OrderBy(g => g.Count());
+
+            lstData.Items.Clear();
+            lstDistinct.Items.Clear();
+
+            foreach (var g in res)
+            {
+                lstData.Items.Add(g.Key);
+                lstDistinct.Items.Add(g.Count());
+
+            }
+           
 
         }
 
